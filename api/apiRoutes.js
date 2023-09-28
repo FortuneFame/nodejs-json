@@ -1,26 +1,26 @@
-const products = require('./products');
+const products = require('./products.js');
 const validateID = require('./middleware/validateID')
 const validateQueryParams = require('./middleware/validateQueryParams');
 
 const apiRoutes = (app) => {
 
     app.get('/api/products', (req, res) => {
-        res.status(200).send(products);
+        res.status(200).json(products);
     });
 
     app.get('/api/products/:id', validateID, (req, res) => {
         const product = products.find(p => p.id === req.params.id);
         if (!product) {
-            return res.status(404).send({ error: "Product not found" });
+            return res.status(404).json({ error: "Product not found" });
         };
-        res.status(200).send(product);
+        res.status(200).json(product);
     });
 
     app.get('/api/search', validateQueryParams, (req, res) => {
         const { title, price } = req.query;
 
         if (!title && price === undefined) {
-            return res.status(404).send({ error: "Provide title or price for search." });
+            return res.status(404).json({ error: "Provide title or price for search." });
         };
 
         const titleWords = title ? title.toLowerCase().split(' ') : [];
@@ -38,14 +38,14 @@ const apiRoutes = (app) => {
         });
 
         if (price !== undefined && !filteredProducts.length) {
-            return res.status(404).send({ error: "No products found matching the specified price." });
+            return res.status(404).json({ error: "No products found matching the specified price." });
         };
 
         if (title && !filteredProducts.length) {
-            return res.status(404).send({ error: "No products found matching the specified title." });
+            return res.status(404).json({ error: "No products found matching the specified title." });
         }
 
-        res.send(filteredProducts);
+        res.json(filteredProducts);
     });
 };
 
