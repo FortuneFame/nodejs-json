@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store API</title>
+    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Montserrat:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <h1>Онлайн-Магазин API</h1>
+
+    <section class="content">
+        <h2>Доступные методы:</h2>
+        <ol>
+            <li>
+                <h3>Получить список всех товаров:</h3>
+                <ul>
+                    <li>
+                        <a href="http://localhost:3000/api/products" target="_blank">http://localhost:3000/api/products</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Получить товар по ID:</h3>
+                <ul>
+                    <li>
+                        <a href="http://localhost:3000/api/products/1" target="_blank">http://localhost:3000/api/products/1</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Поиск товаров по названию или цене:</h3>
+                <ul>
+                    <li>
+                        <a href="http://localhost:3000/api/search?title=Fjallraven" target="_blank">http://localhost:3000/api/search?title=Fjallraven</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:3000/api/search?price=10" target="_blank">http://localhost:3000/api/search?price=10</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:3000/api/search?title=Fjallraven&price=110" target="_blank">http://localhost:3000/api/search?title=Fjallraven&price=110</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost:3000/api/search?price=110&title=Fjallraven" target="_blank">http://localhost:3000/api/search?price=110&title=Fjallraven</a>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+
+        <h2>Ошибки:</h2>
+        <ol>
+            <li>
+                <h3>Товар по ID не найден: Если пользователь пытается получить товар по ID, который не существует в вашем списке, API вернет:</h3>
+                <code>"error": "Product not found"</code>
+            </li>
+            <li>
+                <h3>Нет товаров, соответствующих указанной цене:</h3>
+                <code>"error": "No products found matching the specified price."</code>
+            </li>
+            <li>
+                <h3>Нет товаров, соответствующих указанному названию:</h3>
+                <code>"error": "No products found matching the specified title."</code>
+            </li>
+            <li>
+                <h3>Неверные или отсутствующие параметры запроса: Если пользователь не предоставил параметры title или price в запросе поиска, API вернет:</h3>            
+                <code>"error": "Provide title or price for search."</code>  
+            </li>
+        </ol>
+        <a href="example.html" class="example-button">Перейти к примеру использования</a>
+    </section>
+</body>
+</html>
