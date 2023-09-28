@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (title) params.append('title', title);
         if (price) params.append('price', price);
     
-        return `http://localhost:3000/api/search?${params.toString()}`;
+        return `/api/search?${params.toString()}`;
     };
     
     const displayResults = (data) => {
