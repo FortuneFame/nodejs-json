@@ -242,4 +242,6 @@ const products =
         }
     ]
 
-module.exports = products; 
+module.exports = getProducts = () => {
+    return products;
+}; 

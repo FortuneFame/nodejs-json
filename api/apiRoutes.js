@@ -1,6 +1,8 @@
-const products = require('./products.js');
+const getProducts  = require('./products');
 const validateID = require('./middleware/validateID')
 const validateQueryParams = require('./middleware/validateQueryParams');
+
+const products = getProducts();
 
 const apiRoutes = (app) => {
 
