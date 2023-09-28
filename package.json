@@ -1,7 +1,7 @@
 {
   "name": "nodejs-json",
   "version": "1.0.0",
-  "description": "HW-11",
+  "description": "node.js-json-API-middleware",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
