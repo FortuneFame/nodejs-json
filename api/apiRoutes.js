@@ -28,7 +28,7 @@ const apiRoutes = (app) => {
             const titleMatch = titleWords.every(word => product.title.toLowerCase().includes(word));
 
             if (title && price !== undefined) {
-                return titleMatch && product.price >= price;
+                return titleMatch && product.price <= price;
             } else if (title) {
                 return titleMatch;
             } else if (price !== undefined) {
