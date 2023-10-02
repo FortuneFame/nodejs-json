@@ -1,12 +1,15 @@
 const express = require('express');
-const path = require('path')
-
-const apiRouter = require('./api/apiRoutes')
-
 const app = express();
+const path = require('path');
+
+const apiRouter = require('./api/routes/apiRoutes');
+
 const PORT = process.env.PORT || 3000;
 
-apiRouter(app)
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use('/api', apiRouter);
 
 app.use(express.static('./public'));
 
