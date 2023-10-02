@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Online Store API</title>
+    <title>Онлайн-Магазин API</title>
     <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Montserrat:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./style.css" />
@@ -12,13 +12,36 @@
     <h1>Онлайн-Магазин API</h1>
 
     <section class="content">
-        <h2>Доступные методы:</h2>
+        <a href="/api-docs" class="example-button">Swagger</a>
+        <h2>Установка и запуск:</h2>
+        <ol>
+            <li>
+                <h3>Клонировать репозиторий:</h3>
+                <pre><code>git clone https://github.com/FortuneFame/nodejs-json.git</code></pre>
+            </li>
+            <li>
+                <h3>Установить все зависимости:</h3>
+                <pre><code>npm ci</code></pre>
+            </li>
+            <li>
+                <h3>Запустить сервер:</h3>
+                <pre><code>npm start</code></pre>
+            </li>
+        </ol>
+
+        <h2>Доступные методы API:</h2>
         <ol>
             <li>
                 <h3>Получить список всех товаров:</h3>
                 <ul>
                     <li>
-                        <a href="/api/products">http://localhost:3000/api/products</a>
+                        URL: <a href="http://localhost:3000/api/products">http://localhost:3000/api/products</a>
+                    </li>
+                    <li>
+                        Метод: GET
+                    </li>
+                    <li>
+                        Описание: Возвращает список всех товаров.
                     </li>
                 </ul>
             </li>
@@ -26,7 +49,13 @@
                 <h3>Получить товар по ID:</h3>
                 <ul>
                     <li>
-                        <a href="/api/products/1">http://localhost:3000/api/products/1</a>
+                        URL: <a href="http://localhost:3000/api/products/{id}">http://localhost:3000/api/products/{id}</a>
+                    </li>
+                    <li>
+                        Метод: GET
+                    </li>
+                    <li>
+                        Описание: Возвращает товар по его ID.
                     </li>
                 </ul>
             </li>
@@ -34,38 +63,198 @@
                 <h3>Поиск товаров по названию или цене:</h3>
                 <ul>
                     <li>
-                        <a href="/api/search?title=Fjallraven">http://localhost:3000/api/search?title=Fjallraven</a>
+                        URL: <a href="http://localhost:3000/api/search">http://localhost:3000/api/search</a>
                     </li>
                     <li>
-                        <a href="/api/search?price=10">http://localhost:3000/api/search?price=10</a>
+                        Метод: GET
                     </li>
                     <li>
-                        <a href="/api/search?title=Fjallraven&price=110">http://localhost:3000/api/search?title=Fjallraven&price=110</a>
+                        Описание: Поиск товаров по названию или цене.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Добавить новый товар:</h3>
+                <ul>
+                    <li>
+                        URL: <a href="http://localhost:3000/api/products">http://localhost:3000/api/products</a>
                     </li>
                     <li>
-                        <a href="/api/search?price=110&title=Fjallraven">http://localhost:3000/api/search?price=110&title=Fjallraven</a>
+                        Метод: POST
+                    </li>
+                    <li>
+                        Описание: Добавляет новый товар.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Обновить товар по ID:</h3>
+                <ul>
+                    <li>
+                        URL: <a href="http://localhost:3000/api/products/{id}">http://localhost:3000/api/products/{id}</a>
+                    </li>
+                    <li>
+                        Метод: PUT
+                    </li>
+                    <li>
+                        Описание: Обновляет товар по его ID.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h3>Удалить товар по ID:</h3>
+                <ul>
+                    <li>
+                        URL: <a href="http://localhost:3000/api/products/{id}">http://localhost:3000/api/products/{id}</a>
+                    </li>
+                    <li>
+                        Метод: DELETE
+                    </li>
+                    <li>
+                        Описание: Удаляет товар по его ID.
                     </li>
                 </ul>
             </li>
         </ol>
-
+        
+        <h2>Примеры запросов для Postman:</h2>
+            <ol>
+                <li>
+                    <h3>Получить список всех товаров:</h3>
+                    <ul>
+                        <li>
+                            URL: <a href="http://localhost:3000/api/products">http://localhost:3000/api/products</a>
+                        </li>
+                        <li>
+                            Метод: GET
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Получить товар по ID:</h3>
+                    <ul>
+                        <li>
+                            URL: <a href="http://localhost:3000/api/products/1">http://localhost:3000/api/products/1</a>
+                        </li>
+                        <li>
+                            Метод: GET
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Поиск товаров по названию или цене:</h3>
+                    <ul>
+                        <li>
+                            URL: <a href="http://localhost:3000/api/search?title=Fjallraven">http://localhost:3000/api/search?title=Fjallraven</a>
+                        </li>
+                        <li>
+                            Метод: GET
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Поиск товаров по цене:</h3>
+                    <ul>
+                        <li>
+                            URL: <a href="http://localhost:3000/api/search?price=100">http://localhost:3000/api/search?price=100</a>
+                        </li>
+                        <li>
+                            Метод: GET
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Поиск товаров по названию и цене:</h3>
+                    <ul>
+                        <li>
+                            URL: <a href="http://localhost:3000/api/search?title=Fjallraven&price=100">http://localhost:3000/api/search?title=Fjallraven&price=100</a>
+                        </li>
+                        <li>
+                            Метод: GET
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Поиск товаров по цене и названию:</h3>
+                    <ul>
+                        <li>
+                            URL: <a href="http://localhost:3000/api/search?price=100&title=Fjallraven">http://localhost:3000/api/search?price=100&title=Fjallraven</a>
+                        </li>
+                        <li>
+                            Метод: GET
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Добавить новый товар:</h3>
+                    <ul>
+                        <li>
+                            URL: <a href="http://localhost:3000/api/products">http://localhost:3000/api/products</a>
+                        </li>
+                        <li>
+                            Метод: POST
+                        </li>
+                        <li>
+                            Тело запроса: JSON-объект с информацией о новом товаре. Например:
+                            <pre><code>{
+                                "title": "Новый товар",
+                                "price": 50.99,
+                                "description": "Описание нового товара",
+                                "category": "Категория товара"
+                            }</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Обновить товар по ID:</h3>
+                    <ul>
+                        <li>
+                            URL: <a href="http://localhost:3000/api/products/21">http://localhost:3000/api/products/21</a>
+                        </li>
+                        <li>
+                            Метод: PUT
+                        </li>
+                        <li>
+                            Тело запроса: JSON-объект с обновленной информацией о товаре. Например:
+                            <pre><code>{
+                                "title": "Обновленный товар",
+                                "price": 60.99,
+                                "description": "Обновленное описание товара",
+                                "category": "Категория товара"
+                            }</code></pre>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>Удалить товар по ID:</h3>
+                    <ul>
+                        <li>
+                            URL: <a href="http://localhost:3000/api/products/21">http://localhost:3000/api/products/21</a>
+                        </li>
+                        <li>
+                            Метод: DELETE
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+        
         <h2>Ошибки:</h2>
         <ol>
             <li>
-                <h3>Товар по ID не найден: Если пользователь пытается получить товар по ID, который не существует в вашем списке, API вернет:</h3>
-                <code>"error": "Product not found"</code>
+                <h3>Товар по ID не найден:</h3>
+                <pre><code>"error": "Product not found"</code></pre>
             </li>
             <li>
                 <h3>Нет товаров, соответствующих указанной цене:</h3>
-                <code>"error": "No products found matching the specified price."</code>
+                <pre><code>"error": "No products found matching the specified price."</code></pre>
             </li>
             <li>
                 <h3>Нет товаров, соответствующих указанному названию:</h3>
-                <code>"error": "No products found matching the specified title."</code>
+                <pre><code>"error": "No products found matching the specified title."</code></pre>
             </li>
             <li>
-                <h3>Неверные или отсутствующие параметры запроса: Если пользователь не предоставил параметры title или price в запросе поиска, API вернет:</h3>            
-                <code>"error": "Provide title or price for search."</code>  
+                <h3>Неверные или отсутствующие параметры запроса:</h3>
+                <pre><code>"error": "Provide title or price for search."</code></pre>
             </li>
         </ol>
         <a href="/example.html" class="example-button">Перейти к примеру использования</a>
